@@ -128,7 +128,7 @@ class Revocation:
         file = r'./file.txt'
         a = msg_id+": {\"msg_from\": "+msg_from+", \"msg_time\": "+msg_time+", \"msg_type\": "+msg_type+", \"msg_content\": "+msg_content+", \"msg_url\": "+msg_url+", \"msg_group\": "+msg_group+"}}\n"
         a = a.encode('utf-8')
-        print a
+        print("%s" %a)
         with open(file, 'a+') as f:
             f.write(a)
         #fp=open("./file.txt","a",encoding="utf-8" )
