@@ -31,7 +31,8 @@ class Revocation:
                     # 可下载类消息，并删除相关文件
                     if item['msg_type'] in ['Picture', 'Recording', 'Video', 'Attachment']:
                         try:
-                            os.remove("./Cache/" + item['msg_content'])
+                            #os.remove("./Cache/" + item['msg_content'])
+                            print("%s saved in Cache", item['msg_content'])
                         except BaseException as e:
                             pass
 
