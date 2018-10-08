@@ -126,8 +126,11 @@ class Revocation:
         elif msg['Type'] == 'Friends':
             msg_content = msg['Text']
         file = r'./file.txt'
+        a = "%s: {\"msg_from\": %s, \"msg_time\": %s, \"msg_type\": %s, \"msg_content\": %s, \"msg_url\": %s, \"msg_group\": %s}}\n",(msg_id,msg_from,msg_time,msg_type,msg_content,msg_url,msg_group) 
+        a = a.encode('utf-8')
+        print a
         with open(file, 'a+') as f:
-            f.write("%s: {\"msg_from\": %s, \"msg_time\": %s, \"msg_type\": %s, \"msg_content\": %s, \"msg_url\": %s, \"msg_group\": %s}}\n",(msg_id,msg_from,msg_time,msg_type,msg_content,msg_url,msg_group))
+            f.write(a)
         #fp=open("./file.txt","a",encoding="utf-8" )
         #fp.write("%s: {\"msg_from\": %s, \"msg_time\": %s, \"msg_type\": %s, \"msg_content\": %s, \"msg_url\": %s, \"msg_group\": %s}}\n",(msg_id,msg_from,msg_time,msg_type,msg_content,msg_url,msg_group))
         #fp.close()
